@@ -64,8 +64,3 @@ export function findLastIndex<T>(array: T[], predicate: (value: T) => boolean, n
     }
     return index;
 }
-
-export function setLocale(locale: string) {
-    document.cookie = `locale=${locale}; expires=Fri, 1 Jan 2100 00:00:00 UTC; path=/`;
-    window.location.href = (window as any).originalLocationHref;
-}

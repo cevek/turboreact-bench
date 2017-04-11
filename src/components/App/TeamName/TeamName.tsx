@@ -2,7 +2,6 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 import {AdaptiveName} from '../AdaptiveName/AdaptiveName';
 import {Team} from '../../../models/Team';
-import {div} from '../../../../lib/components/ActionButton/Link';
 import {Shield, ShieldMini} from '../Shield/Shield';
 import {EventTeam} from '../../../models/EventTeam';
 import {EventResult} from '../EventResult/EventResult';

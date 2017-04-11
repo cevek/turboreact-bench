@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {MatchEvent} from '../../../../models/MatchEvent';
-import {div} from '../../../../../lib/components/ActionButton/Link';
 import {i18n} from '../../../../services/i18n';
 import {Tab, Tabs} from '../../../../../lib/components/Tabs/Tabs';
 import {LiveEventCaption} from '../../LiveEventCaption/LiveEventCaption';

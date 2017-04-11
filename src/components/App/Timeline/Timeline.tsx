@@ -4,10 +4,9 @@ import {i18n} from '../../../services/i18n';
 import {getDayInt} from '../../../services/Utils';
 import {Season} from '../../../models/Season';
 import {LiveEvents} from '../LiveEvents/LiveEvents';
-import {ReturnTop} from '../../../../lib/components/ReturnTop/ReturnTop';
-import {Data} from '../../../models/Data';
 import {Timeline as TimelineModel} from '../../../models/Timeline';
 import {DateTime} from '../DateTime/DateTime';
+import {Data} from '../../../models/Data';
 
 
 interface TimelineProps {
@@ -21,7 +20,6 @@ export class Timeline extends React.Component<TimelineProps, {}> {
         const {timeline, data} = this.props;
         return (
             <div className="timeline">
-                <ReturnTop>{i18n().return_top}</ReturnTop>
                 <main className="main-content">
                     {timeline.liveEvents.events.length !== 0 &&
                     <div className="timeline__header">{i18n().timeline_live_title}</div>

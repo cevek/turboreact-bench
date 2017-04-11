@@ -11,14 +11,9 @@ import {arrayGroup, getUTCDayInt} from './services/Utils';
 import {MatchEvent} from './models/MatchEvent';
 
 
-function prepareEvent(event: MatchEvent) {
-}
-
-liveEvents.forEach(prepareEvent);
-events.forEach(prepareEvent);
 const d = new Data(data);
 const grouppedEvents = arrayGroup(events, (event: MatchEvent) => getUTCDayInt(new Date(event.date * 1000)) + '_' + event.roundId);
-const timeline:TimelineModel = {liveEvents: {events: liveEvents}, grouppedEvents};
+const timeline:TimelineModel = {liveEvents: {events: liveEvents}, grouppedEvents} as any;
 
 
 

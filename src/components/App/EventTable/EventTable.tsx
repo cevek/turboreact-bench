@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {MatchEvent} from '../../../models/MatchEvent';
 import {Table, TablePropsData} from '../Table/Table';
-import {div} from '../../../../lib/components/ActionButton/Link';
 import {DateTime} from '../DateTime/DateTime';
 import {EventScore} from '../EventScore/EventScore';
 import {Data} from '../../../models/Data';

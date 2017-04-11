@@ -2,7 +2,6 @@ import * as React from 'react';
 import {MatchEvent} from '../../../models/MatchEvent';
 import {formatEventTime, formatScore} from '../../../services/Utils';
 import {TeamName} from '../TeamName/TeamName';
-import {div} from '../../../../lib/components/ActionButton/Link';
 import {LiveHalf} from '../LiveHalf/LiveHalf';
 import {Data} from '../../../models/Data';
 
