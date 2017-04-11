@@ -1,0 +1,183 @@
+.live-time-half {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid $data-table-divider-color;
+  font-weight: 600;
+}
+
+.live-time-half__half,
+.live-time-half__time {
+  display: inline-block;
+}
+
+.live-time-half__time {
+  padding-left: .5rem;
+  margin-left: .6rem;
+  box-shadow: -1px 0 0 $data-table-divider-color;
+}
+
+.live-time-half__round {
+  color: $color-gray;
+  font-weight: 300;
+}
+
+.live-event-info--is-card-block {
+  position: relative;
+}
+
+.live-event-info__content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 0 0;
+
+  .team--card-version {
+    .form__win,
+    .form__lose,
+    .form__draw {
+      width: 7px;
+      height: 7px;
+    }
+
+    @include small-mobile {
+      flex-flow: row nowrap;
+
+      &:first-of-type {
+        justify-content: flex-start;
+
+        .team__info {
+          margin-left: .5rem;
+        }
+      }
+
+      &:last-of-type {
+        justify-content: flex-end;
+
+        .team__info {
+          order: 1;
+          margin-right: .5rem;
+        }
+
+        .team__link {
+          order: 2;
+        }
+      }
+
+      .team__image--big {
+        display: none !important;
+      }
+
+      .last-results {
+        display: none !important;
+      }
+
+      .team__info {
+        font-size: 1.2rem;
+        margin-top: 0 !important;
+      }
+
+      .team__link {
+        justify-content: center !important;
+      }
+
+      .team__image {
+        width: auto;
+        padding-bottom: 0 !important;
+      }
+    }
+
+    .team__image {
+      @include not-small-mobile {
+        display: none !important;
+      }
+    }
+  }
+
+  .team {
+    &:first-of-type {
+      align-items: flex-start;
+
+      .team__info {
+        text-align: left;
+      }
+
+      .team__link {
+        align-items: flex-start;
+      }
+    }
+
+    &:last-of-type {
+      align-items: flex-end;
+
+      .team__info {
+        text-align: right;
+      }
+
+      .team__link {
+        align-items: flex-end;
+      }
+    }
+
+    .team__info,
+    .last-results {
+      margin-top: 1rem;
+    }
+
+    .shield {
+      height: 4.5rem;
+    }
+
+    .team__info {
+      font-size: 1rem;
+      word-wrap: break-word;
+      word-break: break-word;
+      hyphens: auto;
+      white-space: normal;
+    }
+
+    .team__link {
+      justify-content: flex-end;
+      min-height: 2rem;
+      color: $color-gray;
+    }
+
+    .last-results {
+      margin-top: 0;
+      line-height: 2;
+    }
+
+    .form__win, .form__lose, .form__draw {
+      margin-left: 5px;
+      margin-top: 0;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+
+  @include small-mobile {
+    padding-top: .5rem;
+  }
+}
+
+.live-event-info__score {
+  @include typo-live-score;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -2rem;
+  //align-self: flex-start;
+  //justify-self: center;
+  color: $color-gray;
+
+  @include small-mobile {
+    font-size: 1.5rem;
+    line-height: 2;
+    margin-left: -12.5px;
+    padding: 0 .2rem
+  }
+}

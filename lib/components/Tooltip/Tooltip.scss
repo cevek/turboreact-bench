@@ -1,0 +1,18 @@
+.tooltip {
+}
+
+.tooltip--opened {
+  position: relative;
+}
+
+.tooltip__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  padding: 4px 8px;
+  border: 1px solid rgba(0, 0, 0, .05);
+  background: white;
+  z-index: 1000;
+  transform: translate(-50%, -100%);
+}

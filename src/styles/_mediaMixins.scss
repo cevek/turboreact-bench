@@ -1,0 +1,88 @@
+$media-desktop-min-width: 1024px !default;
+$media-wide-desktop-min-width: 1280px !default;
+$media-mobile-max-width: 736px !default;
+$media-live-event-card-mobile-max: $media-mobile-max-width - 300px;
+
+@mixin mobile {
+  @media (max-width: #{$media-mobile-max-width}) {
+    @content;
+  }
+}
+
+@mixin not-mobile {
+  @media (min-width: #{$media-mobile-max-width + 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$media-mobile-max-width}) and (max-width: #{$media-desktop-min-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$media-desktop-min-width}) {
+    @content;
+  }
+}
+
+@mixin not-desktop {
+  @media (max-width: #{$media-desktop-min-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin wide-desktop {
+  @media (min-width: #{$media-wide-desktop-min-width}) {
+    @content;
+  }
+}
+
+@mixin not-wide-desktop {
+  @media (max-width: #{$media-wide-desktop-min-width - 1px}) {
+    @content;
+  }
+}
+
+
+@mixin live-cards-2 {
+  @media screen and (max-width: #{$media-mobile-max-width - 100px}) {
+    @content;
+  }
+}
+
+@mixin live-cards-3 {
+  @media screen and (max-width: #{$media-desktop-min-width + 200px}) {
+    @content;
+  }
+}
+
+@mixin live-cards-4 {
+  @media screen and (min-width: #{$media-mobile-max-width + 100px}) and (max-width: #{$media-desktop-min-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin live-cards-5 {
+  @media screen and (min-width: #{$media-desktop-min-width + 500px}) {
+    @content;
+  }
+}
+
+@mixin live-cards-6 {
+  @media screen and (min-width: #{$media-desktop-min-width + 800px}) {
+    @content;
+  }
+}
+
+@mixin small-mobile {
+  @media screen and (max-width: #{480px}) {
+    @content;
+  }
+}
+@mixin not-small-mobile {
+  @media screen and (min-width: #{481px}) {
+    @content;
+  }
+}

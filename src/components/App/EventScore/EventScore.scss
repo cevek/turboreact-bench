@@ -1,0 +1,44 @@
+.score {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+
+  .team {
+    align-items: center;
+    width: 50%;
+    width: calc(50% - 26.5px);
+  }
+
+  .score__link {
+    @include typo-subhead-2;
+    font-weight: bold;
+    padding: 0 .5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .score__link-separator {
+    padding: 0 .2rem;
+  }
+}
+
+.event-table--fixtures {
+  .score__event-time-center {
+    @include not-mobile {
+      display: none;
+    }
+  }
+
+  .score__link {
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.event-table--results {
+  .score__event-time-center {
+    display: none;
+  }
+}

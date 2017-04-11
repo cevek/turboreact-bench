@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <%- css %>
+</head>
+<body>
+
+<svg class="hidden-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="143px" height="157px" viewBox="0 0 142.811 156.965">
+    <defs>
+        <clipPath id="shield_clip">
+            <use xlink:href="#shield"/>
+        </clipPath>
+        <path id="shield" d="M118.518,5.768c0.08,0,0.16,0,0.239,0c4.454,4.369,8.903,8.743,13.364,13.105
+			c2.725,2.666,5.467,5.314,8.26,8.027c-0.322,0.551-0.617,1.059-0.918,1.563c-0.324,0.546-0.668,1.08-0.978,1.634
+			c-4.382,7.86-6.903,16.291-7.804,25.235c-0.51,5.06,0.491,9.925,1.891,14.706c2.053,7.014,4.372,13.951,6.426,20.965
+			c0.527,1.799,0.67,3.766,0.667,5.654c-0.009,4.787-1.081,9.387-2.939,13.797c-2.004,4.754-4.821,8.988-8.7,12.383
+			c-3.885,3.398-7.958,6.588-11.991,9.814c-3.853,3.084-8.193,5.268-12.816,6.982c-6.442,2.393-12.831,4.93-19.228,7.443
+			c-1.809,0.711-3.63,1.438-5.33,2.369c-2.621,1.434-4.947,3.277-6.602,5.752c-1.342-1.283-2.537-2.555-3.865-3.67
+			c-3.758-3.154-8.432-4.596-12.814-6.504c-4.797-2.09-9.861-3.559-14.729-5.496c-2.984-1.188-5.974-2.5-8.687-4.197
+			c-3.666-2.295-7.158-4.895-10.561-7.572c-5.805-4.566-10.77-9.84-13.881-16.719c-3.595-7.951-3.914-16.104-1.688-24.354
+			c1.489-5.518,3.557-10.877,5.277-16.334c1.44-4.569,2.518-9.233,2.347-14.063c-0.202-5.688-1.343-11.234-3.304-16.558
+			c-1.521-4.127-3.416-8.117-5.266-12.452c0.327-0.286,0.909-0.761,1.449-1.277c6.468-6.184,12.937-12.365,19.378-18.576
+			c0.604-0.583,1.047-0.519,1.634-0.079c5.664,4.245,12.035,6.732,19.042,7.627c8.453,1.079,16.588-0.005,24.332-3.642
+			c0.839-0.394,1.521-0.373,2.352,0.052c5.262,2.692,10.898,4.046,16.775,4.088c4.975,0.035,9.953-0.352,14.746-1.872
+			C109.772,11.957,114.464,9.419,118.518,5.768z" fill="none" stroke="#CBAD58" stroke-width="6"/>
+
+        <g id="shield_main_color">
+            <polygon id="p1" clip-path="url(#shield_clip)"
+                     points="-88.336,165.612 -115.401,138.54 93.17,-70.031 120.236,-42.964 	"/>
+            <polygon id="p2" clip-path="url(#shield_clip)"
+                     points="7.33,261.278 -19.734,234.206 188.837,25.636 215.903,52.703 	"/>
+            <polygon id="p3" clip-path="url(#shield_clip)"
+                     points="-40.531,213.417 -67.595,186.344 140.975,-22.225 168.042,4.842 	"/>
+        </g>
+        <rect id="shield_back_color" clip-path="url(#shield_clip)" x="0" y="0" width="160" height="160" />
+    </defs>
+</svg>
+<svg class="hidden-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="125.19px" height="134.606px" viewBox="0 0 125.19 134.606">
+    <defs>
+        <path id="shield_small" d="M122.717,62.141V10.208c0-4.718-3.823-8.542-8.541-8.542H61.893H9.61c-4.718,0-8.542,3.824-8.542,8.542
+			v51.933c0,0-4.568,56.471,60.824,71.01C127.285,118.612,122.717,62.141,122.717,62.141z" fill="none" stroke="#555"/>
+        <clipPath id="shield_small_clippath">
+            <use xlink:href="#shield_small" overflow="visible"/>
+        </clipPath>
+        <rect id="shield_small_back_color" clip-path="url(#shield_small_clippath)" x="0" y="0" width="150" height="150" />
+        <rect id="shield_small_main_color" clip-path="url(#shield_small_clippath)" x="-9.477" y="-2.06" width="71.37" height="166.667"/>
+    </defs>
+</svg>
+
+<div id="wrapper"><%- body %></div>
+<script>
+    if (typeof Map == 'undefined' || typeof Set == 'undefined') {document.write('<'+'script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/shim.min.js"><'+'/script>');}
+</script>
+
+<%- appConfig %>
+<%- js %>
+
+</body>
+</html>

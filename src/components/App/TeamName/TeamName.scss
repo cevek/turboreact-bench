@@ -1,0 +1,170 @@
+.team {
+  display: flex;
+}
+
+.team__link {
+  display: flex;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  white-space: normal;
+
+  @include mobile {
+    //pointer-events: none;
+    cursor: default;
+  }
+}
+
+.team__info {
+  @include typo-body-3;
+  flex: 1;
+  line-height: 1rem !important;
+}
+
+.team--icon-left {
+  .team__info {
+    order: 2;
+    margin-left: .5rem;
+  }
+
+  .team__img-link {
+    order: 1;
+  }
+}
+
+.team--icon-right {
+  justify-content: flex-end;
+
+  .team__info {
+    text-align: right;
+    margin-right: .5rem;
+  }
+
+  .team__info-link {
+    justify-content: flex-end;
+  }
+}
+
+.tournament-overview {
+  .standings-table {
+    .team--icon-right {
+      justify-content: flex-end;
+
+      .team__link {
+        justify-content: flex-end;
+      }
+
+      .team__info {
+        order: 1;
+        text-align: right;
+        flex: 1 0 50%;
+        padding-left: .5rem;
+      }
+
+      .team__link {
+        order: 2;
+        margin-left: .5rem;
+      }
+    }
+
+    .team--icon-left {
+      .team__info {
+        order: 2;
+        text-align: left;
+        flex: 1 0 50%;
+        padding-right: .5rem;
+
+        .team__link {
+          justify-content: flex-start;
+        }
+      }
+
+      .team__link {
+        order: 1;
+        margin-right: .5rem;
+      }
+    }
+  }
+}
+
+.tournament-overview,
+.tournament-results,
+.tournament-fixtures,
+.timeline {
+  .team--icon-left,
+  .team--icon-right {
+    .team__info {
+      flex: 0 1 60%;
+    }
+  }
+
+  .team--icon-left {
+    justify-content: flex-end;
+
+    @include mobile {
+      justify-content: initial;
+    }
+  }
+
+  .team--icon-right {
+    justify-content: flex-start;
+
+    @include mobile {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.team--vertical {
+  flex-flow: column nowrap;
+  flex: 1 0 40%;
+
+  .shield {
+    order: 1;
+  }
+
+  .team__info {
+    order: 2
+  }
+
+  .team__link {
+    flex-flow: column-reverse nowrap;
+  }
+
+  .team__info {
+    margin-top: .2rem;
+  }
+
+  .team__image {
+    width: 40%;
+    padding-bottom: calc(40% - 20px);
+    border-radius: 0;
+
+    @include mobile {
+      width: 70%;
+      padding-bottom: calc(70% - 20px);
+    }
+  }
+
+  .team__image-aspect-ratio {
+    padding-bottom: 100%;
+  }
+}
+
+.team--card-version {
+  flex: 0 1 50%;
+}
+
+.team__image {
+  flex: 0 0 20px;
+  min-width: 20px;
+  height: 20px;
+}
+
+.team__image--big {
+  //flex: 0 1 50%;
+
+  @include mobile {
+    //flex: initial;
+  }
+}

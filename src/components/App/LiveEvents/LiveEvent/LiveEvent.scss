@@ -1,0 +1,160 @@
+$live-tournament-flag-size: 30px;
+
+@mixin live-event__paddings() {
+  padding: $live-event-card-vpadding $live-event-card-hpadding;
+}
+
+.live-event {
+  width: calc(25% - #{$live-event-card-hmargin});
+  display: inline-block;
+  margin-left: $live-event-card-hmargin;
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  vertical-align: top;
+}
+@include live-cards-5 {
+  .live-event {
+    width: calc(20% - #{$live-event-card-hmargin});
+  }
+}
+
+@include live-cards-6 {
+  .live-event {
+    width: calc(16.66666% - #{$live-event-card-hmargin});
+  }
+}
+
+@include live-cards-3 {
+  .live-event {
+    width: calc(33.3333% - #{$live-event-card-hmargin});
+  }
+}
+
+@include live-cards-4 {
+  .live-event {
+    width: calc(25% - #{$live-event-card-hmargin});
+  }
+}
+
+@include live-cards-2 {
+  .live-event {
+    width: calc(50% - #{$live-event-card-hmargin});
+  }
+}
+
+@include small-mobile {
+  .live-event {
+    width: calc(100% - #{$live-event-card-hmargin});
+  }
+  .live-event__mobile-time-half {
+    display: block !important;
+  }
+  .live-event__desktop-time-half {
+    display: none !important;
+  }
+  .live-event__tab-names {
+    display: none !important;
+  }
+  .team__link {
+    pointer-events: none;
+  }
+}
+
+.live-event__tabs {
+  border: 1px solid $border-light;
+  border-top: none;
+  border-bottom: none;
+  background-color: $bg-light;
+}
+
+.live-event__tab-names {
+  display: flex;
+}
+
+.live-event__tab {
+  @include live-event__paddings;
+  flex: 1;
+  text-align: center;
+  border-bottom: 4px solid transparent;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.live-event__active-tab {
+  color: teal;
+  border-color: teal;
+}
+
+.live-event__tab-content {
+  min-height: 17rem;
+  @include live-event__paddings;
+
+  @include small-mobile {
+    min-height: initial;
+    height: auto;
+    padding: .5rem;
+  }
+}
+
+.live-event__tournament {
+  padding-bottom: $live-event-card-vpadding;
+  display: flex;
+  font-size: 1.1rem;
+  border-bottom: 1px solid $data-table-divider-color;
+
+  @include small-mobile {
+    padding-bottom: .5rem;
+  }
+}
+
+.live-event__tournament-flag {
+  width: $live-tournament-flag-size;
+  height: $live-tournament-flag-size;
+}
+
+.live-event__tournament-title {
+  font-weight: bold;
+  margin-left: 10px;
+  line-height: $live-tournament-flag-size;
+}
+
+.live-event__tournament_link {
+  display: flex;
+}
+
+.live-event__mobile-time-half {
+  flex: 1;
+  line-height: $live-tournament-flag-size;
+  text-align: right;
+  display: none;
+}
+
+.live-event__half {
+  display: inline;
+}
+
+.live-event__event-time {
+  &:before {
+    background: $data-table-divider-color;
+    height: 1.1rem;
+    width: 1px;
+    content: '';
+    display: inline-block;
+    margin: 0 5px -2px;
+  }
+}
+
+.live-event__go {
+  @include live-event__paddings;
+  color: $color-white;
+  display: block;
+  border-radius: 0 0 3px 3px;
+  background: $bg-black url(components/App/LiveEvents/LiveEvent/right-arrow.png) calc(100% - #{$live-event-card-hpadding}) center no-repeat;
+  background-size: 4px 8px;
+  font-weight: 300;
+}
+
+.live-event__go:hover{
+  background-color: $teal;
+}

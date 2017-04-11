@@ -1,0 +1,279 @@
+@mixin typo-preferred-font($usePreferred: true) {
+  @if $usePreferred {
+    font-family: $preferred_font;
+  }
+}
+
+@mixin typo-display-2($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 48px;
+
+  @if $colorContrast {
+    opacity: 0.54;
+  }
+}
+
+@mixin typo-headline($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 28.5px;
+  font-weight: 500;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-title($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-time($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 3.222222222222222rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-live-score($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 2.666666666666667rem;
+  font-weight: 600;
+  line-height: 2.7;
+  letter-spacing: 0.02em;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-live-details($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.02em;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-td($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.25rem;
+  font-weight: normal;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-title-score($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 3.217222222222222rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-mobile-title-time($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 3.349230769230769rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-mobile-title($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-subhead($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.561538461538462rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-subhead-2($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.076923076923077rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-body-1($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.846153846153846rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-body-2($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.615384615384615rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-body-3($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.148888888888889rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-body-4($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.388461538461538rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-body-5($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.846153846153846rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-body-6($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.333333333333333rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-body-7($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-caption($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.666666666666667rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.54;
+  }
+}
+
+@mixin typo-table-caption($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 1.166666666666667rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.54;
+  }
+}
+
+
+@mixin typo-menu($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 15.2px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin typo-table-menu($colorContrast: false, $usePreferred: false) {
+  @include typo-preferred-font($usePreferred);
+  font-size: 0.888888888888889rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}

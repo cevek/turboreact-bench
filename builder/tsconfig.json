@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitThis": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

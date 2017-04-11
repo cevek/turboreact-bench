@@ -1,0 +1,240 @@
+.table {
+  white-space: nowrap;
+  background-color: $bg-white;
+  width: 100%;
+
+  @include mobile {
+    background-color: $bg-light;
+    border-radius: 5px 5px 0 0;
+    border-color: $border-gray;
+  }
+}
+
+.table__caption {
+  @include typo-caption;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  border-bottom: 1px solid $data-table-divider-color;
+  padding-bottom: 1rem;
+
+  @include mobile {
+    padding: .5rem;
+    background-color: $bg-white;
+  }
+}
+
+.table__head {
+  display: flex;
+  color: $color-gray;
+
+  @include mobile {
+    //border-bottom: 1px solid $data-table-divider-color;
+    background-color: $bg-light;
+  }
+}
+
+.table__header {
+  display: none;
+}
+
+.table__flag {
+  width: 75px;
+  padding-right: 2rem;
+
+  @include mobile {
+    padding: .5rem 1rem .5rem .5rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  @media screen and (max-width: $media-live-event-card-mobile-max) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.table__flag-img {
+  display: inline-block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.table__head-text {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  flex: 1;
+
+  @include mobile {
+    padding: .5rem 0 .5rem 0;
+    justify-content: center;
+  }
+}
+
+.table__titles {
+  @include mobile {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    flex: 1;
+  }
+}
+
+.table__title {
+  @include typo-body-6;
+  font-weight: bold;
+  line-height: 1;
+
+  @include mobile {
+    font-size: 1.3rem;
+    padding-top: .5rem;
+  }
+
+  @media screen and (max-width: $media-live-event-card-mobile-max) {
+    font-size: 1.2rem;
+    padding-top: 0;
+  }
+}
+
+.table__sub-title {
+  font-weight: 400;
+  padding-top: .5rem;
+  color: $color-gray;
+  text-align: left;
+
+  @include mobile {
+    font-size: 1.1rem;
+    padding-top: 0;
+    padding-bottom: .5rem;
+  }
+
+  @media screen and (max-width: $media-live-event-card-mobile-max) {
+    padding-bottom: 0;
+  }
+}
+
+.table__menu {
+  @include mobile {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+  }
+}
+
+.table__body {
+  margin-top: 1rem;
+
+  @include mobile {
+    margin-top: 0;
+  }
+
+  .table__row {
+    display: flex;
+    align-items: center;
+    height: $data-table-row-height;
+    @include material-animation-default(0.28s);
+    transition-property: background-color;
+
+    &.is-selected {
+      background-color: $data-table-selection-color;
+    }
+
+    &:nth-child(2n+1) {
+      //background-color: $bg-light;
+      background: linear-gradient(90deg, white, #fafafa 25%, #fafafa 75%, white 100%);
+    }
+
+    @include mobile {
+      &:nth-child(2n+1) {
+        background: white;
+      }
+    }
+
+    @include desktop {
+      &:hover {
+        background: $bg-selected;
+        cursor: pointer;
+        @include material-animation-default(0.28s);
+        transition-property: background-color;
+
+        .status-link--upcoming {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.table__time,
+.table__game,
+.table__status {
+  line-height: $data-table-row-height;
+  //padding: 1rem $data-table-column-padding 1rem $data-table-column-padding;
+
+  &:before {
+    content: '';
+    float: left;
+    margin-top: 9px;
+    height: 30px;
+    width: 1px;
+    background-color: $data-table-divider-color;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &:first-of-type {
+    padding-left: 0;
+  }
+
+  &:last-of-type {
+    padding-right: 0;
+  }
+}
+
+.table__message {
+  text-align: center;
+}
+
+
+.table__links {
+  @include typo-table-menu;
+  display: flex;
+}
+
+.table__links-item {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  padding: 1rem 0;
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: color .3s;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: $teal;
+    transition: width .5s $animation-curve-fast-out-slow-in;
+  }
+
+  &:hover {
+    color: $teal;
+    transition: color .3s;
+
+    &:after {
+      width: 100%;
+      transition: width .5s $animation-curve-fast-out-slow-in;
+    }
+  }
+}

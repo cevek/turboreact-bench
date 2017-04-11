@@ -1,0 +1,66 @@
+.event-table {
+  padding-top: 2.5rem;
+
+  @include mobile {
+    border: 1px solid $data-table-divider-color;
+    border-radius: 5px 5px 0 0;
+    padding-top: 1.5rem;
+  }
+}
+
+.table__time {
+  width: 15%;
+
+  @include mobile {
+    visibility: hidden;
+    opacity: 0;
+    width: 0;
+  }
+}
+
+.table__status {
+  width: 5%;
+  height: 100%;
+
+  @include mobile {
+    visibility: hidden;
+    opacity: 0;
+    width: 0 !important;
+  }
+}
+
+.table__game {
+  width: 80%;
+  height: 100%;
+
+  @include mobile {
+    width: 100%;
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
+  }
+}
+
+.table__time-link,
+.table__status-link,
+.table__game-link {
+  display: flex;
+}
+
+.table__time-link,
+.table__status-link {
+  justify-content: center;
+}
+
+.table__status-link {
+  margin-top: 12px;
+}
+
+.status-link--upcoming {
+  opacity: .12;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('components/App/Collapse/icons/expand--black.svg');
+  transform: rotate(-90deg);
+  transition: opacity .5s;
+}

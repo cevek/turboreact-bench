@@ -1,0 +1,9 @@
+@include mobile {
+  .adaptive-name:before {
+    content: attr(data-adaptive-name);
+  }
+
+  .adaptive-name--full {
+    display: none !important;
+  }
+}

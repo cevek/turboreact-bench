@@ -1,0 +1,155 @@
+html {
+  //background-color: $layout-header-bg-color;
+  color: $color-primary;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include mobile {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+
+.hidden-svg {
+  position: absolute;
+  left: -10000px;
+  width: 0;
+  height: 0;
+}
+
+#wrapper {
+  //min-height: 100%;
+  height: 100%;
+
+  > div {
+    height: 100%;
+  }
+
+  body.error &:empty {
+    display: none;
+  }
+
+  &:empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+
+    &:before {
+      content: '';
+      width: 60px;
+      height: 60px;
+      background-image: url("components/App/images/drawer-bg.jpg");
+      background-size: contain;
+      animation: sk-rotateplane 1.2s infinite ease-in-out;
+    }
+
+    &:after {
+      content: 'Loading...';
+      margin-top: .5rem;
+    }
+  }
+}
+
+.app {
+  min-height: 100%;
+  height: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app--no-scroll {
+  position: fixed;
+  left: 0;
+  right: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.content {
+  @include desktop {
+    margin-left: 300px;
+  }
+
+  height: auto;
+}
+
+.content-body {
+  background-color: $bg-header;
+}
+
+.main-content {
+  background-color: $bg-white;
+}
+
+.scroll__loading {
+  position: relative;
+  margin: 1rem 0;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+
+  &:before,
+  &:after {
+    content: '';
+    display: inline;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: $dark-green;
+    text-align: center;
+  }
+
+  &:before {
+    left: 50%;
+    animation: loading-left 2.5s linear infinite;
+  }
+
+  &:after {
+    right: 50%;
+    animation: loading-right 2.5s linear infinite;
+  }
+}
+
+@keyframes loading-left {
+  from {
+    left: 50%;
+    width: 0;
+  }
+  50% {
+    left: 0;
+    width: 50%;
+  }
+  to {
+    left: 0;
+    width: 0;
+  }
+}
+
+@keyframes loading-right {
+  from {
+    right: 50%;
+    width: 0;
+  }
+  50% {
+    right: 0;
+    width: 50%;
+  }
+  to {
+    right: 0;
+    width: 0;
+  }
+}
+
+.link__in-progress {
+  opacity: 0.5;
+}

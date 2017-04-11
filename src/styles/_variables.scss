@@ -1,0 +1,77 @@
+$live-event-card-hmargin: 20px;
+$live-event-card-vmargin: 15px;
+$live-event-card-hpadding: 15px;
+$live-event-card-vpadding: 1rem;
+
+
+$performance_font: 'Helvetica', 'Arial', sans-serif !default;
+
+$border-super-light: #FAFAFA;
+$border-light: #EAEAEA;
+$border-gray: #DDD;
+
+$bg-white: #fff;
+$bg-black: #000;
+$bg-header: #f3f8fc;
+$bg-light: #FAFAFA;
+$bg-gray: #DDD;
+$bg-selected: #f3f8fc;
+
+$color-white: #fff;
+$color-primary: #252525;
+$color-light: #a8a8a8;
+$color-gray: #848484;
+$color-gray: #5b5b5b;
+$color-link: $color-primary;
+$color-star: #d6bf93;
+
+$teal: teal;
+$dark-green: #11191c;
+
+$event-action-red: #9f1f02;
+$event-action-goal: #325900;
+$event-action-yellow: #e39103;
+$event-action-subst: #5b9fd8;
+
+$form-win: green;
+$form-lose: red;
+$form-draw: orange;
+
+
+$font-adjustment-1: 320px !default;
+$font-adjustment-2: 480px !default;
+$font-adjustment-3: 640px !default;
+$font-adjustment-4: 800px !default;
+$font-adjustment-5: 960px !default;
+$font-adjustment-6: 1120px !default;
+$font-adjustment-7: 1280px !default;
+$font-adjustment-8: 1440px !default;
+$font-adjustment-9: 1600px !default;
+$font-adjustment-10: 1760px !default;
+$font-adjustment-11: 1920px !default;
+
+$layout-drawer-narrow: 300px !default;
+$layout-drawer-width: $layout-drawer-narrow !default;
+
+$layout-drawer-button-desktop-size: 46px !default;
+
+
+$layout-header-mobile-row-height: 56px !default;
+$layout-mobile-header-height: $layout-header-mobile-row-height;
+$layout-header-desktop-row-height: 70px !default;
+$layout-desktop-header-height: $layout-header-desktop-row-height;
+
+$layout-header-mobile-indent: 10px !default;
+$layout-header-desktop-indent: 20px !default;
+
+$animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$animation-curve-default: $animation-curve-fast-out-slow-in !default;
+
+$shadow-key-umbra-opacity: 0.2 !default;
+$shadow-key-penumbra-opacity: 0.14 !default;
+$shadow-ambient-shadow-opacity: 0.12 !default;
+
+$data-table-divider-color: $border-light !default;
+$data-table-selection-color: #e0e0e0 !default;
+$data-table-row-height: 48px !default;
+$data-table-column-padding: 0;

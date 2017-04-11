@@ -1,0 +1,413 @@
+$event-type-size: 50px;
+$event-type-size--mobile: 40px;
+$event-info-triangle-size: 15px;
+$event-info-triangle-border-size: 16px;
+
+.event {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.event--team-two {
+  .event__type {
+    margin-left: $event-info-width + 10px;
+
+    &:after {
+      right: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 7%);
+
+      @media screen and (max-width: 1300px) {
+        right: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 6%);
+      }
+
+      @media screen and (max-width: 1150px) {
+        right: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 5%);
+      }
+
+      @media screen and (max-width: 1080px) {
+        right: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 4%);
+      }
+
+      @include not-desktop {
+        right: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 7%);
+      }
+
+      @media screen and (max-width: 950px) {
+        right: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 6%);
+      }
+
+      @media screen and (max-width: 860px) {
+        right: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 5%);
+      }
+
+      @media screen and (max-width: 790px) {
+        right: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 4%);
+      }
+
+      @include mobile {
+        right: -9999px;
+      }
+    }
+
+    @include small-mobile {
+      margin-left: calc(50% - 20px);
+    }
+  }
+
+  .event__info {
+    margin-left: 10px;
+    padding: 1rem 1.5rem 1rem 1rem;
+
+    &:after,
+    &:before {
+      right: 100%;
+    }
+
+    &:after {
+      top: 50%;
+      border-top: $event-info-triangle-size solid transparent;
+      border-bottom: $event-info-triangle-size solid transparent;
+      border-right: $event-info-triangle-size solid $border-super-light;
+    }
+
+    &:before {
+      top: calc(50% - 1px);
+      border-top: $event-info-triangle-border-size solid transparent;
+      border-bottom: $event-info-triangle-border-size solid transparent;
+      border-right: $event-info-triangle-border-size solid $border-light;
+    }
+
+    .event__info-marker {
+      right: 0;
+      left: 95%;
+      border-radius: 0 3px 3px 0;
+    }
+  }
+}
+
+.event--team-one {
+  .event__aligner {
+    order: 3;
+  }
+
+  .event__type {
+    margin-right: $event-info-width + 10px;
+    order: 2;
+
+    &:after {
+      left: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 7%);
+
+      @media screen and (max-width: 1300px) {
+        left: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 6%);
+      }
+
+      @media screen and (max-width: 1150px) {
+        left: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 5%);
+      }
+
+      @media screen and (max-width: 1080px) {
+        left: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 4%);
+      }
+
+      @include not-desktop {
+        left: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 7%);
+      }
+
+      @media screen and (max-width: 950px) {
+        left: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 6%);
+      }
+
+      @media screen and (max-width: 860px) {
+        left: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 5%);
+      }
+
+      @media screen and (max-width: 790px) {
+        left: calc((#{$event-info-width} + #{$event-info-triangle-border-size}) + 4%);
+      }
+
+      @include mobile {
+        left: -9999px;
+      }
+
+      @include mobile {
+        padding-top: 0rem;
+      }
+    }
+
+    @include small-mobile {
+      margin-right: calc(50% - 20px);
+    }
+  }
+
+  .event__info {
+    order: 1;
+    margin-right: 10px;
+    text-align: right;
+    padding: 1rem 1rem 1rem 1.5rem;
+
+    &:after,
+    &:before {
+      left: 100%;
+    }
+
+    &:after {
+      top: 50%;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 15px solid $border-super-light;
+    }
+
+    &:before {
+      top: calc(50% - 1px);
+      border-top: 16px solid transparent;
+      border-bottom: 16px solid transparent;
+      border-left: 16px solid $border-light;
+    }
+
+    .event__info-marker {
+      right: 95%;
+      left: 0;
+      border-radius: 3px 0 0 3px;
+    }
+  }
+}
+
+.event--penalty-goal {
+  .event__type,
+  .event__info-marker {
+    background-color: $event-action-goal;
+  }
+
+  .event__type {
+    &:before {
+      width: 30px;
+      height: 30px;
+      background-image: url('components/App/Event/icons/penalty-goal.svg');
+    }
+  }
+}
+
+.event--penalty-missed {
+  .event__type,
+  .event__info-marker {
+    background-color: $event-action-red;
+  }
+
+  .event__type {
+    &:before {
+      width: 30px;
+      height: 30px;
+      background-image: url('components/App/Event/icons/penalty-missed.svg');
+    }
+  }
+}
+
+.event--team-one.event--substitution {
+  .event__info-details {
+    text-align: right;
+    margin-right: 14px;
+  }
+}
+
+.event--team-two.event--substitution {
+  .event__info-details {
+    margin-left: 14px;
+  }
+}
+
+.event--substitution {
+  .event__type,
+  .event__info-marker {
+    background-color: $event-action-subst;
+  }
+
+  .event__type {
+    &:before {
+      width: 30px;
+      height: 30px;
+      background-image: url('components/App/Event/icons/substitution.svg');
+    }
+  }
+}
+
+.event--red-card {
+  .event__type,
+  .event__info-marker {
+    background-color: $event-action-red;
+  }
+
+  .event__type {
+    &:before {
+      width: 30px;
+      height: 30px;
+      background-image: url('components/App/Event/icons/red-card.svg');
+    }
+  }
+}
+
+.event--yellow-card {
+  .event__type,
+  .event__info-marker {
+    background-color: $event-action-yellow;
+  }
+
+  .event__type {
+    &:before {
+      width: 30px;
+      height: 30px;
+      background-image: url('components/App/Event/icons/yellow-card.svg');
+    }
+  }
+}
+
+.event--second-yellow-card {
+  .event__type,
+  .event__info-marker {
+    background-color: $event-action-red;
+  }
+
+  .event__type {
+    &:before {
+      width: 30px;
+      height: 30px;
+      background-image: url('components/App/Event/icons/second-yellow-card.svg');
+    }
+  }
+}
+
+.event--goal {
+  .event__type,
+  .event__info-marker {
+    background-color: $event-action-goal;
+  }
+
+  .event__type {
+    &:before {
+      width: 30px;
+      height: 30px;
+      background-image: url('components/App/Event/icons/goal.svg');
+    }
+  }
+}
+
+.event__type {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: static;
+  z-index: 1;
+  width: $event-type-size;
+  height: $event-type-size;
+  border-radius: 100%;
+
+  &:before {
+    content: '';
+    display: inline-block;
+  }
+
+  &:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: calc((50% - #{$event-info-width} - #{$event-info-triangle-border-size} - #{$event-type-size})/2);
+    height: 1px;
+    background-color: $data-table-divider-color;
+  }
+
+  @include small-mobile {
+    width: $event-type-size--mobile;
+    height: $event-type-size--mobile;
+  }
+}
+
+.event__info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  position: relative;
+  width: $event-info-width;
+  background-color: $bg-light;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid $border-light;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    margin-top: -15px;
+    pointer-events: none;
+  }
+
+  @include small-mobile {
+    width: calc(50% - 30px);
+  }
+}
+
+.event__info-marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.event__info-status {
+  color: $color-gray;
+}
+
+.event__info-time {
+  color: $color-gray;
+  margin-top: 5px;
+}
+
+.event__info-details {
+  @include typo-table-caption;
+  margin-top: .5rem;
+}
+
+.event__player-one,
+.event__player-two {
+  position: relative;
+  word-wrap: normal;
+
+  .in,
+  .out {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -5.5px;
+    width: 14px;
+    height: 11px;
+    background-position: center center;
+  }
+
+  .in {
+    background-image: url('components/App/Event/icons/in.svg');
+  }
+
+  .out {
+    background-image: url('components/App/Event/icons/out.svg');
+  }
+}
+
+.event--team-one {
+  .in,
+  .out {
+    right: -16px;
+  }
+}
+
+.event--team-two {
+  .in,
+  .out {
+    left: -16px;
+  }
+}

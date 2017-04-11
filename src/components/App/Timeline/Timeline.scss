@@ -1,0 +1,132 @@
+.timeline__header {
+  @include typo-caption;
+  border-bottom: 1px solid $data-table-divider-color;
+  padding: 2rem 0 1rem;
+  font-weight: 600;
+
+  @include not-desktop {
+    padding: 1rem 0 .5rem;
+  }
+}
+
+.timeline {
+  @include not-desktop {
+    margin-top: 50px;
+  }
+
+  .table__head {
+    @include mobile {
+      border-bottom: 1px solid $data-table-divider-color;
+    }
+  }
+
+  .main-content {
+    margin: 0 2rem;
+
+    @include mobile {
+      margin: 50px 1rem 0;
+    }
+  }
+
+  .event-table {
+    padding-top: 0;
+    margin-top: 1rem;
+
+    @include not-desktop {
+      padding-left: 0;
+    }
+  }
+
+  .table__status-link {
+    @include not-desktop {
+      justify-content: flex-end;
+    }
+  }
+
+  //@media screen and (max-width: $media-wide-desktop-min-width) {
+  //  margin-top: 50px;
+  //}
+}
+
+.content-event {
+  margin-bottom: 3rem;
+
+  .event-table {
+    margin: 2rem 3rem 0 3rem;
+
+    @include mobile {
+      margin: 0;
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 1.5rem;
+  }
+  @include small-mobile {
+    margin-bottom: .5rem;
+  }
+}
+
+.event__time {
+  @include typo-caption;
+  border-bottom: 1px solid $data-table-divider-color;
+  padding: 1rem 0;
+
+  .date-time__weekday {
+    margin-left: 1.2rem;
+    padding-left: 1rem;
+    box-shadow: -1px 0 0 $data-table-divider-color;
+  }
+
+  @include mobile {
+    font-size: 1.4rem;
+    position: relative;
+    text-align: center;
+    border-bottom: 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-top: 1px solid $border-gray;
+    }
+
+    .date-time__weekday,
+    .date-time__date {
+      position: relative;
+      display: inline-block;
+      box-sizing: border-box;
+      background-color: $bg-white;
+      min-width: 150px;
+    }
+
+    .date-time__weekday {
+      text-align: left;
+      margin-left: 0;
+      padding-right: 2.5rem;
+    }
+
+    .date-time__date {
+      text-align: right;
+      padding: 0 1rem 0 2.5rem;
+    }
+  }
+
+  @include small-mobile {
+    .date-time__weekday,
+    .date-time__date {
+      min-width: 110px;
+    }
+
+    .date-time__weekday {
+      padding-right: 1rem;
+    }
+
+    .date-time__date {
+      padding: 0 1rem;
+    }
+  }
+}

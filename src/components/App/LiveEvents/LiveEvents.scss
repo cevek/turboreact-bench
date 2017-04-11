@@ -1,0 +1,8 @@
+.live-events {
+  padding-top: 1.5rem;
+  margin-left: -20px;
+
+  @include not-desktop {
+    padding-top: 1rem;
+  }
+}

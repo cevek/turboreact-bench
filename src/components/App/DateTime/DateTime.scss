@@ -1,0 +1,9 @@
+.date-time {
+  .date-time__date ~ .date-time__time {
+    margin-left: .2rem;
+  }
+}
+
+.date-time--server-render-time {
+  visibility: hidden;
+}
