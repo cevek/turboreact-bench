@@ -21,21 +21,21 @@ export class LiveEventInfo extends React.Component<LiveEventInfoProps, {}> {
                 <div className="live-event-info__content">
                     <TeamName
                         data={data}
-                        team={data.getTeamById(event.homeTeam.teamId)}
+                        team={data.getTeamById(event.results[0].teamId)}
                         iconPosition="vertical"
                         modification="card"
                         showLastMatches
-                        eventTeam={event.homeTeam}/>
+                        eventTeam={event.results[0]}/>
                     <TeamName
                         data={data}
-                        team={data.getTeamById(event.awayTeam.teamId)}
+                        team={data.getTeamById(event.results[1].teamId)}
                         iconPosition="vertical"
                         modification="card"
                         showLastMatches
-                        eventTeam={event.awayTeam}/>
+                        eventTeam={event.results[1]}/>
                 </div>
                 <div className="live-event-info__score">
-                    {formatScore(event.homeTeam.score)}:{formatScore(event.awayTeam.score)}
+                    {formatScore(event.results[0].score)}:{formatScore(event.results[1].score)}
                 </div>
             </div>
         );
@@ -55,7 +55,7 @@ export class LiveTimeHalf extends React.Component<LiveTimeHalfProps, {}> {
             <div className={'live-time-half ' + className}>
                 <div className="live-time-half__left">
                     <LiveHalf className="live-time-half__half" half={event.half}/>
-                    <div className="live-time-half__time">{formatEventTime(event.eventTime, event.eventTimePlus)}</div>
+                    <div className="live-time-half__time">{formatEventTime(event.eventTime, false)}</div>
                 </div>
                 <div className="live-time-half__round">{event.roundName}</div>
             </div>

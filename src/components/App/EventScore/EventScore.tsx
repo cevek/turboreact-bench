@@ -20,17 +20,17 @@ export class EventScore extends React.Component<EventScoreProps, {}> {
                 <TeamName
                     data={data}
                     iconPosition='left'
-                    team={data.getTeamById(event.homeTeam.teamId)}/>
+                    team={data.getTeamById(event.results[0].teamId)}/>
                 <EventTime showDate={false} showTime={true} event={event} className="score__event-time-center"/>
                 <div>
-                    <span>{formatScore(event.homeTeam.score)}</span>
+                    <span>{formatScore(event.results[0].score)}</span>
                     <span className="score__link-separator">:</span>
-                    <span>{formatScore(event.awayTeam.score)}</span>
+                    <span>{formatScore(event.results[1].score)}</span>
                 </div>
                 <TeamName
                     data={data}
                     iconPosition='right'
-                    team={data.getTeamById(event.awayTeam.teamId)}/>
+                    team={data.getTeamById(event.results[1].teamId)}/>
             </div>
         );
     }

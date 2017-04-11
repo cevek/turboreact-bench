@@ -3,10 +3,8 @@ import {Round} from './Round';
 import {Tournament} from './Tournament';
 import {Country} from './Country';
 import {Team} from './Team';
-import {Timeline} from './Timeline';
 
 export class Data {
-    timeline: Timeline;
     seasons = new Map<number, Season>();
     rounds = new Map<number, Round>();
     tournamentsMap = new Map<number, Tournament>();
@@ -22,7 +20,7 @@ export class Data {
     }
 
     getTeamById(id: number) {
-        return this.teams.get(id);
+        return this.teamsMap.get(id);
     }
 
     getTournamentById(id: number) {
@@ -41,21 +39,24 @@ export class Data {
         this.countries.forEach((country: Country) => {
             this.countryMap.set(country.id, country);
             country.tournaments.forEach(tournament => {
+                tournament.countryId = country.id;
                 this.tournamentsMap.set(tournament.id, tournament);
                 this.tournamentsPathMap.set(tournament.path, tournament);
                 tournament.seasons.forEach(season => {
+                    season.tournamentId = tournament.id;
                     this.seasons.set(season.id, season);
-                    this.addRound(season.rounds);
+                    this.addRound(season.rounds, season.id);
                 });
             });
         });
     }
 
-    private addRound(rounds: Round[]) {
+    private addRound(rounds: Round[], seasonId: number) {
         for (let i = 0; i < rounds.length; i++) {
             const round = rounds[i];
+            // round.seasonId = seasonId;
             this.rounds.set(round.id, round);
-            this.addRound(round.items);
+            this.addRound(round.items, seasonId);
         }
     }
 }

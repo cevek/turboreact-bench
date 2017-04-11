@@ -39,6 +39,7 @@ export function createPackerInstance(serverSide: boolean) {
             // .then(babel(null))
             // .then(reactHot())
             .then(sass('index.scss'))
+            .then(copy('components/App/images/flags/normal/*', path=>path.replace('components/App/', '')))
             .then(combineJS('index.js', 'js/bundle.js'))
             // .then(uglifyjs('../dist/bundle.js'))
             .then(combineCSS('styles/style.css'))

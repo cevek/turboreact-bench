@@ -1,23 +1,24 @@
 import * as React from 'react';
 import {EventTable} from '../EventTable/EventTable';
 import {i18n} from '../../../services/i18n';
-import {DateTime} from '../DateTime/DateTime';
 import {getDayInt} from '../../../services/Utils';
 import {Season} from '../../../models/Season';
 import {LiveEvents} from '../LiveEvents/LiveEvents';
 import {ReturnTop} from '../../../../lib/components/ReturnTop/ReturnTop';
 import {Data} from '../../../models/Data';
+import {Timeline as TimelineModel} from '../../../models/Timeline';
+import {DateTime} from '../DateTime/DateTime';
 
 
 interface TimelineProps {
     data: Data;
+    timeline: TimelineModel;
 }
 
 
 export class Timeline extends React.Component<TimelineProps, {}> {
     render() {
-        const {data} = this.props;
-        const timeline = data.timeline;
+        const {timeline, data} = this.props;
         return (
             <div className="timeline">
                 <ReturnTop>{i18n().return_top}</ReturnTop>
@@ -32,8 +33,8 @@ export class Timeline extends React.Component<TimelineProps, {}> {
                         const tournament = data.getTournamentById(season.tournamentId);
                         const country = data.getCountryById(tournament.countryId);
                             return <div key={key} className="content-event">
-                                {i === 0 || getDayInt(timeline.grouppedEvents[i - 1].item.date) !== getDayInt(item.date)
-                                    ? <DateTime className="event__time" date={item.date} showWeekDay/>
+                                {i === 0 || getDayInt(new Date(timeline.grouppedEvents[i - 1].item.date * 1000)) !== getDayInt(new Date(item.date * 1000))
+                                    ? <DateTime className="event__time" date={new Date(item.date * 1000)} showWeekDay/>
                                     : null
                                 }
                                 <EventTable
@@ -41,7 +42,7 @@ export class Timeline extends React.Component<TimelineProps, {}> {
                                     className="event-table--fixtures"
                                     headerImageNode={
                                         <div>
-                                            <img className="table__flag-img" src={country.image}
+                                            <img className="table__flag-img" src={'/images/flags/normal/' + country.id + '.jpg'}
                                                  alt="flag"/>
                                         </div>
                                     }
@@ -69,9 +70,9 @@ class SeasonLinks extends React.Component<SeasonLinksProps, {}> {
         const {season} = this.props;
         return (
             <div className="table__links">
-                <div>{season.name}</div>
-                <div>{i18n().section_results}</div>
-                <div>{i18n().section_fixtures}</div>
+                <div className="table__links-item">{season.name}</div>
+                <div className="table__links-item">{i18n().section_results}</div>
+                <div className="table__links-item">{i18n().section_fixtures}</div>
             </div>
         );
     }

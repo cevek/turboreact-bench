@@ -16,10 +16,10 @@ export interface MatchEvent {
     roundId: number;
     isLive: number;
     status: string;
-    statusType: MatchEventStatus;
-    date: Date;
+    // statusType: MatchEventStatus;
+    date: number;
     eventTime: number;
-    eventTimePlus: boolean;
+    // eventTimePlus: boolean;
     half: number;
     details: EventAction[];
     homeTeamGoals: EventAction[];
@@ -27,6 +27,6 @@ export interface MatchEvent {
     results: EventTeam[];
     roundName: string;
 
-    homeTeam: EventTeam;
-    awayTeam: EventTeam;
+    // homeTeam: EventTeam;
+    // awayTeam: EventTeam;
 }

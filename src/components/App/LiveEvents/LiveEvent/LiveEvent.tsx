@@ -24,19 +24,19 @@ export class LiveEvent extends React.Component<LiveEventProps, {}> {
 
         return (
             <div className="live-event">
-                <LiveEventCaption eventDate={event.date}/>
+                <LiveEventCaption eventDate={new Date(event.date * 1000)}/>
                 <Tabs className="live-event__tabs" tabNamesClassName="live-event__tab-names"
                       activeTabClassName="live-event__active-tab">
                     <Tab title={i18n().live_event__info} className="live-event__tab">
                         <div className="live-event__tab-content">
                             <div className="live-event__tournament">
                                 <div className="live-event__tournament_link">
-                                    <img className="live-event__tournament-flag" src={country.image} alt=""/>
+                                    <img className="live-event__tournament-flag" src={'/images/flags/normal/' + country.id + '.jpg'} alt=""/>
                                     <div className="live-event__tournament-title">{tournament.nameAbbrv}</div>
                                 </div>
                                 <div className="live-event__mobile-time-half">
                                     <LiveHalf className="live-event__half" half={event.half}/>
-                                    <span className="live-event__event-time">{formatEventTime(event.eventTime, event.eventTimePlus)}</span>
+                                    <span className="live-event__event-time">{formatEventTime(event.eventTime, false)}</span>
                                 </div>
                             </div>
                             <LiveTimeHalf event={event} className="live-event__desktop-time-half"/>

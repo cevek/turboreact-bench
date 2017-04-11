@@ -14,12 +14,12 @@ interface LiveEventGoalsProps {
 export class LiveEventGoals extends React.Component<LiveEventGoalsProps, {}> {
     render() {
         const {data, event, className = ''} = this.props;
-        const {homeTeam, awayTeam, homeTeamGoals, awayTeamGoals} = event;
+        const {homeTeamGoals, awayTeamGoals} = event;
 
         return (
             <div className={'live-event__goals ' + className}>
-                <TeamGoals data={data} team={homeTeam} teamGoals={homeTeamGoals} teamClassName="goals--home-team"/>
-                <TeamGoals data={data} team={awayTeam} teamGoals={awayTeamGoals} teamClassName="goals--away-team"/>
+                <TeamGoals data={data} team={event.results[0]} teamGoals={homeTeamGoals} teamClassName="goals--home-team"/>
+                <TeamGoals data={data} team={event.results[1]} teamGoals={awayTeamGoals} teamClassName="goals--away-team"/>
             </div>
         );
     }

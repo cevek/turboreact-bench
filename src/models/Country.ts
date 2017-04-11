@@ -5,7 +5,7 @@ export interface Country {
     name:string;
     nameAbbrv:string
     tournaments:Tournament[];
-    imageCut:string;
-    image:string;
+    // imageCut:string;
+    // image:string;
     path:string;
 }

@@ -81,7 +81,7 @@ export class EventTime extends React.Component<EventTimeProps, {}> {
         const {event, showDate, showTime, className = ''} = this.props;
         return (
             <div className={'table__time-link ' + className}>
-                <DateTime date={event.date} showDate={showDate} showTime={showTime}/>
+                <DateTime date={new Date(event.date * 1000)} showDate={showDate} showTime={showTime}/>
             </div>
         );
     }

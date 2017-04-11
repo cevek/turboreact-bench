@@ -13,9 +13,9 @@ interface EventResultProps {
 export class EventResult extends React.Component<EventResultProps, {}> {
     render() {
         const {teamId, event, data} = this.props;
-        const eventTeam = event.homeTeam.teamId === teamId ? event.homeTeam : event.awayTeam;
+        const eventTeam = event.results[0].teamId === teamId ? event.results[0] : event.results[1];
         const className = eventTeam.draw ? 'form__draw' : (eventTeam.win ? 'form__win' : 'form__lose');
-        const tooltip = `${data.getTeamById(event.homeTeam.teamId).name} ${formatScore(event.homeTeam.score)}:${formatScore(event.awayTeam.score)} ${data.getTeamById(event.awayTeam.teamId).name}`;
+        const tooltip = `${data.getTeamById(event.results[0].teamId).name} ${formatScore(event.results[0].score)}:${formatScore(event.results[1].score)} ${data.getTeamById(event.results[1].teamId).name}`;
         return (
             <Tooltip tooltip={tooltip} className={className}>
                 <div/>
